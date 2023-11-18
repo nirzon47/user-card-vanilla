@@ -1,4 +1,10 @@
 // DOM
+const fNameElement = document.getElementById('first-name')
+const lNameElement = document.getElementById('last-name')
+const countryElement = document.getElementById('country')
+const pNumberElement = document.getElementById('phone-number')
+const cityElement = document.getElementById('city')
+const stateElement = document.getElementById('state')
 
 // Variables
 
@@ -10,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (!hasVisitedBefore) {
 		localStorage.setItem('hasVisitedBefore', true)
 		promptInputs()
+	} else {
+		updateCard()
 	}
 })
 
@@ -34,4 +42,11 @@ const promptInputs = () => {
 	updateCard()
 }
 
-const updateCard = () => {}
+const updateCard = () => {
+	fNameElement.innerText = localStorage.getItem('fName')
+	lNameElement.innerText = localStorage.getItem('lName')
+	countryElement.innerText = localStorage.getItem('country')
+	pNumberElement.innerText = localStorage.getItem('pNumber')
+	cityElement.innerText = localStorage.getItem('city')
+	stateElement.innerText = localStorage.getItem('state')
+}
