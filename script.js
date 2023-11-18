@@ -6,7 +6,7 @@ const pNumberElement = document.getElementById('phone-number')
 const cityElement = document.getElementById('city')
 const stateElement = document.getElementById('state')
 
-// Variables
+const resetBtnElement = document.getElementById('reset')
 
 // Initialization
 const hasVisitedBefore = localStorage.getItem('hasVisitedBefore') || false
@@ -21,11 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 })
 
+resetBtnElement.addEventListener('click', () => {
+	localStorage.clear()
+	promptInputs()
+})
+
 // Functions
 const promptInputs = () => {
 	const fName = prompt('What is your first name?')
 	const lName = prompt('What is your last name?')
-	const country = prompt('Where are you from?')
+	const country = prompt('Where country are you from?')
 	const pNumber = prompt('What is your phone number?')
 	const city = prompt('What city do you live in?')
 	const state = prompt('What state do you live in?')
